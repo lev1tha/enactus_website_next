@@ -1,42 +1,54 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
-  box-sizing: border-box;
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
+
+  outline: none;
+  cursor: default;
+  font-family: var(--montserrat-font);
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+body {
+  background-color: var(--basic-blue);
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+:root {
+  /* Basic */
+  --basic-yellow: #fcc100;
+  --basic-blue: #161c2d;
+  --basic-gray: #f0f1f5;
+  --basic-red: #cc1108;
+
+  /* Light */
+  --light-purple: #c69fff;
+  --light-gray: #f2f4f6;
+  --light-pink: #ffc6c3;
+  --light-blue: #292f41;
+
+  /* Opacity */
+  --opacity-black: #00000099;
+
+  /* Typography */
+  --montserrat-font: "Montserrat", sans-serif;
+
+  /* Fonts Color */
+  --basic-color: #526581;
+
+  /* Border-Radius */
+  --default-border-radius: 8px;
+  --input-border-radius: 50px;
+  --button-border-radius: 24px;
+  --outlet-border-radius: 26px;
+
+  /* Border */
+  --inactive-border: 1px solid #d9d9d9;
+  --active-border: 1px solid #ffc221;
 }
