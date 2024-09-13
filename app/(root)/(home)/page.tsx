@@ -5,18 +5,18 @@ import UniversityCart from "@/share/components/cartUniversity";
 import Select from "@/share/ui/selector";
 import Layout from "@/widget/layout";
 
-import { DataUniversity } from "@/share/lib/GlobalType";
+import { TDataUniversity } from "@/share/lib/GlobalType";
 
 export default function Home() {
   const [cityData, setDataCity] = useState<string>("Город");
-  const [universities, setUniversities] = useState<DataUniversity[]>([]);
+  const [universities, setUniversities] = useState<TDataUniversity[]>([]);
   const [filteredUniversities, setFilteredUniversities] = useState<
-    DataUniversity[]
+    TDataUniversity[]
   >([]);
 
   useEffect(() => {
     const fetchUniversities = async () => {
-      const data: DataUniversity[] = [
+      const data: TDataUniversity[] = [
         { id: 1, name: "ОшГУ", city: "Ош" },
         { id: 2, name: "ОшТУ", city: "Ош" },
         { id: 3, name: "ОшКУУ", city: "Ош" },

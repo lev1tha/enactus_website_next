@@ -1,0 +1,33 @@
+.universityInfo_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.inner {
+  display: flex;
+  gap: 35px;
+}
+
+.complete_university_information {
+  background-color: white;
+  border-radius: var(--outlet-border-radius);
+  padding: 40px;
+}
+
+.title {
+  width: fit-content;
+  background-color: var(--light-yellow);
+  padding: 12px 16px;
+  border-radius: var(--input-border-radius);
+  margin-bottom: 20px;
+}
+
+.title h1 {
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.complete_university_information p {
+  font-size: 15px;
+  font-weight: 400;
+}
