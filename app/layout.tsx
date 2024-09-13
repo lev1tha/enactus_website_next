@@ -3,7 +3,6 @@ import localFont from "next/font/local";
 import style from "./layout.module.css";
 import Navigation from "@/widget/navigate";
 import Layout from "@/widget/layout";
-
 import "./globals.css";
 
 const geistSans = localFont({
@@ -34,7 +33,6 @@ export default function RootLayout({
           <div className={style.app_container}>
             <Navigation />
             <div className={style.inner}>
-              <Layout />
               {children}
             </div>
           </div>
