@@ -1,4 +1,5 @@
 export interface DataUniversity {
-    name: string,
-    city: string,
+    id: number;
+    name: string;
+    city: string;
 }

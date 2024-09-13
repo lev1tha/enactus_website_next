@@ -1,4 +1,6 @@
 .layout_container {
+  position: sticky;
+  top: 0px;
   background-color: white;
   width: 240px;
   height: 740px;
