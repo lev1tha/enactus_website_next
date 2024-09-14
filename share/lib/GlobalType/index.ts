@@ -11,3 +11,7 @@ export interface TUniversityInfoHeader {
     city?: string,
     rector?: string,
 }
+
+export interface TFile {
+    documents?: string[]
+}
