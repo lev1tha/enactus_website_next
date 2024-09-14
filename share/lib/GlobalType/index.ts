@@ -13,5 +13,7 @@ export interface TUniversityInfoHeader {
 }
 
 export interface TFile {
+    title: string,
+    url: string,
     documents?: string[]
 }

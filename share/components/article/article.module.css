@@ -1,6 +1,6 @@
 .article_container {
   background-color: white;
-  padding: 32px 40px;
+  padding: 32px 36px;
   border-radius: var(--outlet-border-radius);
   text-align: center;
 }

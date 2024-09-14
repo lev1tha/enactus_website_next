@@ -12,30 +12,24 @@ export default function UniversityInfo({
   return (
     <div className={style.header_container}>
       <div className={style.logotype}>
-        <img src={image} alt="logotype university" />
+        <img src={image} alt={`${nameUniversity} логотип`} />
       </div>
       <div className={style.info}>
         <div className={style.university_name}>
-          <h1>
-            {/* {nameUniversity}*/}
-            Кыргызский Государственный Технический Университет им. И. Раззакова
-          </h1>
+          <h1>{nameUniversity}</h1>
         </div>
         <div className={style.university_curtailment}>
-          <span>
-            {/* {curtailment}} */}
-            КГТУ-УСТА
-          </span>
+          <span>{curtailment}</span>
         </div>
         <div className={style.location_rector}>
           <div className={style.location}>
             <p>
-              Город : <span>{/* {city} */} Бишкек</span>
+              Город : <span>{city}</span>
             </p>
           </div>
           <div className={style.rector}>
             <p>
-              Ректор: <span>{/* {rector} */} Чыныбаев Мирлан Койчубекович</span>
+              Ректор: <span>{rector}</span>
             </p>
           </div>
         </div>
