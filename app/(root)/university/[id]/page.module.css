@@ -12,6 +12,7 @@
   background-color: white;
   border-radius: var(--outlet-border-radius);
   padding: 40px;
+  width: 80%;
 }
 
 .title {

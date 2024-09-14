@@ -3,9 +3,8 @@ import Layout from "@/widget/layout";
 import UniversityInfo from "@/share/components/universityInfo";
 import Article from "@/share/components/article";
 import style from "./page.module.css";
-import { $api } from "@/utils/axios"; // Импортируй свой настроенный axios
+import { $api } from "@/utils/axios";
 
-// Асинхронная функция компонента для рендеринга на сервере
 export default async function UniversityPage({
   params,
 }: {
@@ -13,14 +12,12 @@ export default async function UniversityPage({
 }) {
   const universityId = params.id;
 
-  // Запрос к API с использованием axios
   let universityData;
   try {
-    const response = await $api.get(`/university/${universityId}`);
+    const response = await $api.get(`/universities/${universityId}/`);
     universityData = response.data;
   } catch (error) {
     console.error("Ошибка при получении данных:", error);
-    // Верни что-то, если произошла ошибка, например, пустой объект
     universityData = null;
   }
 
@@ -32,10 +29,12 @@ export default async function UniversityPage({
     <div className={style.universityInfo_container}>
       <UniversityInfo
         image={universityData.image}
-        nameUniversity={universityData.nameUniversity}
-        curtailment={universityData.curtailment}
-        city={universityData.city}
-        rector={universityData.rector}
+        nameUniversity={universityData.name}
+        curtailment={universityData.abbreviation}
+        city={universityData.region}
+        rector={`${universityData.rectors_first_name} ${
+          universityData.rectors_second_name
+        } ${universityData.rectors_middle_name || ""}`}
       />
       <div className={style.inner}>
         <Layout />
@@ -44,10 +43,8 @@ export default async function UniversityPage({
             <h1>Информация об университете</h1>
           </div>
           <p>
-            {/* Вставка информации об университете */}В истории{" "}
-            {universityData.nameUniversity} было немало значительных событий...
+            В истории {universityData.name} было немало значительных событий...
             <br />
-            {/* Далее идет текст описания университета */}
           </p>
         </div>
         <Article documents={universityData.documents} />
