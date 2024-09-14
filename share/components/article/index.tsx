@@ -17,6 +17,9 @@ export default function Article({ documents }: { documents: TFile[] }) {
           </button>
         </div>
       ))}
+      <Link href={"/document"}>
+        <button className={style.all_document}>Посмотреть все</button>
+      </Link>
     </div>
   );
 }
