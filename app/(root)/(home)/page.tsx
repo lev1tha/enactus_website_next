@@ -4,8 +4,8 @@ import style from "./home.module.css";
 import UniversityCart from "@/share/components/cartUniversity";
 import Select from "@/share/ui/selector";
 import Layout from "@/widget/layout";
-
 import { TDataUniversity } from "@/share/lib/GlobalType";
+import { $api } from "@/utils/axios";
 
 export default function Home() {
   const [cityData, setDataCity] = useState<string>("Город");
@@ -16,18 +16,13 @@ export default function Home() {
 
   useEffect(() => {
     const fetchUniversities = async () => {
-      const data: TDataUniversity[] = [
-        { id: 1, name: "ОшГУ", city: "Ош" },
-        { id: 2, name: "ОшТУ", city: "Ош" },
-        { id: 3, name: "ОшКУУ", city: "Ош" },
-        { id: 4, name: "КГУ", city: "Бишкек" },
-        { id: 5, name: "БГУ", city: "Баткен" },
-        { id: 6, name: "АУЦА", city: "Бишкек" },
-        { id: 7, name: "КГМА", city: "Бишкек" },
-        { id: 8, name: "ДЖГУ", city: "Джалал-Абад" },
-        { id: 9, name: "УрФУ", city: "Екатеринбург" },
-      ];
-      setUniversities(data);
+      try {
+        const response = await $api.get("/universities");
+        const data = response.data.results;
+        setUniversities(data);
+      } catch (error) {
+        console.error("Ошибка при получении данных об университетах:", error);
+      }
     };
 
     fetchUniversities();
@@ -38,7 +33,7 @@ export default function Home() {
       setFilteredUniversities(universities);
     } else {
       const filtered = universities.filter(
-        (university) => university.city === cityData
+        (university) => university.region === cityData
       );
       setFilteredUniversities(filtered);
     }
@@ -72,7 +67,15 @@ export default function Home() {
 
         <div className={style.university_list}>
           {filteredUniversities.map((university) => (
-            <UniversityCart key={university.id} university={university} />
+            <UniversityCart
+              key={university.id}
+              university={{
+                id: university.id,
+                name: university.name || "Без названия",
+                abbreviation: university.abbreviation || "N/A",
+                image: university.image || "/placeholder.jpg",
+              }}
+            />
           ))}
         </div>
       </div>

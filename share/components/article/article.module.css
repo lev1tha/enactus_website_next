@@ -1,0 +1,48 @@
+.article_container {
+  background-color: white;
+  padding: 32px 40px;
+  border-radius: var(--outlet-border-radius);
+  text-align: center;
+}
+
+.title {
+  margin-bottom: 40px;
+}
+
+.title h1 {
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.document_box {
+  border: 2px solid var(--basic-gray);
+  border-radius: var(--button-border-radius);
+  width: 242px;
+  padding: 23px 24px;
+  margin-bottom: 20px;
+}
+
+.document_box:last-child {
+  margin-bottom: 0;
+}
+
+.document_box h5 {
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 24px;
+}
+
+.document_box button {
+  padding: 8px 28px;
+  border: 1px solid var(--basic-yellow);
+  border-radius: var(--default-border-radius);
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.document_box button a {
+  color: var(--basic-yellow);
+  font-family: var(--montserrat-font);
+  text-decoration: none;
+  font-size: 13px;
+}
