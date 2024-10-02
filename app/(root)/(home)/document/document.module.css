@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  gap: 35px;
+}
+
+.document_container {
+  padding: 24px;
+  background-color: white;
+  border-radius: var(--button-border-radius);
+  max-width: 1060px;
+  width: 100vw;
+
+  height: fit-content;
+}

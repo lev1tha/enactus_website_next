@@ -42,7 +42,6 @@ export default function Home() {
   return (
     <>
       <Layout />
-
       <div className={style.container_home_page}>
         <div className={style.title_inner}>
           <div className="title">
