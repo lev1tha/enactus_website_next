@@ -47,7 +47,10 @@ export default async function UniversityPage({
             <br />
           </p>
         </div>
-        <Article documents={universityData.documents} />
+        <Article
+          documents={universityData.documents}
+          id={universityData.name}
+        />
       </div>
     </div>
   );

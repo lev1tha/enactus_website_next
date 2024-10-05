@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import style from "./layout.module.css";
 import Navigation from "@/widget/navigate";
 import "./globals.css";

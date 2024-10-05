@@ -12,3 +12,18 @@
 
   height: fit-content;
 }
+
+.breadcrumb {
+  width: 300px;
+  max-width: 500px;
+
+  color: black;
+  font-size: 16px;
+  font-family: var(--montserrat-font);
+}
+
+.document_backArrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}

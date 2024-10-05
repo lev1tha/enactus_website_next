@@ -3,7 +3,14 @@ import Link from "next/link";
 import { TFile } from "@/share/lib/GlobalType";
 import style from "./article.module.css";
 
-export default function Article({ documents }: { documents: TFile[] }) {
+export default function Article({
+  documents,
+  id,
+}: {
+  documents: TFile[];
+  id: string;
+}) {
+  console.log(id.split(" "));
   return (
     <div className={style.article_container}>
       <div className={style.title}>Документы</div>
@@ -17,7 +24,7 @@ export default function Article({ documents }: { documents: TFile[] }) {
           </button>
         </div>
       ))}
-      <Link href={"/document"}>
+      <Link href={`${id}/document`}>
         <button className={style.all_document}>Посмотреть все</button>
       </Link>
     </div>

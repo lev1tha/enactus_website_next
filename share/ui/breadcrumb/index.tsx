@@ -1,8 +1,33 @@
-"use client";
-import { useEffect } from "react";
+import Link from "next/link";
 
-export default function index() {
-  useEffect(() => {}, []);
+interface BreadcrumbProps {
+  university: string;
+}
 
-  return <div></div>;
+export default function BreadcrumbComponents({ university }: BreadcrumbProps) {
+  if (!university) {
+    return <div>Загрузка университета . . .</div>;
+  }
+
+  return (
+    <div className="breadcrumb">
+      <Link href={`/university/${university}/document`}>{university}</Link>
+    </div>
+  );
+}
+
+export async function getServerSideProps(context: any) {
+  const { university } = context.query;
+
+  if (!university) {
+    return {
+      notFound: true,
+    };
+  }
+
+  return {
+    props: {
+      university: String(university),
+    },
+  };
 }
